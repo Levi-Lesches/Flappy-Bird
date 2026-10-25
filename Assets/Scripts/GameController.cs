@@ -15,6 +15,10 @@ public class GameController : MonoBehaviour {
   public int highScore = 0;
   public float speed = 0.015f;
 
+  void Start() {
+    Application.targetFrameRate = 60;
+  }
+
   void Awake() {
     audioPlayer = GetComponentInChildren<AudioPlayer>();
     highScore = PlayerPrefs.GetInt("highScore", 0);
