@@ -10,10 +10,10 @@ public class Mover : MonoBehaviour {
 	}
 
 	void Start() {
-		rb.velocity = new Vector2(-controller.speed, 0);
+		rb.linearVelocity = new Vector2(-controller.speed, 0);
 	}
 
 	public void OnGameOver() {
-		rb.velocity = Vector2.zero;
+		rb.linearVelocity = Vector2.zero;
 	}
 }

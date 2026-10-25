@@ -61,7 +61,7 @@ public class BirdController : MonoBehaviour {
   void Flap() {
     if (controller.state == GameState.Start)
       StartGame();
-    rb.velocity = new Vector2(0, floatAngle);
+    rb.linearVelocity = new Vector2(0, floatAngle);
     controller.audioPlayer.Flap();
     rotater.Reset();
   }
@@ -77,7 +77,7 @@ public class BirdController : MonoBehaviour {
   // Runs when the player dies
   public void Fall() {
     rotater.shouldRotate = false;
-    rb.velocity += new Vector2(1, fallSpeed);
+    rb.linearVelocity += new Vector2(1, fallSpeed);
     transform.rotation = Quaternion.Euler(0f, 0f, finalAngle);
     animator.SetBool("isAlive", false);
   }
